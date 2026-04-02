@@ -9,7 +9,7 @@ const Vendors = () => {
 
   const fetchVendors = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/v1/vendors');
+      const response = await axios.get('https://karyasanchay.onrender.com/api/v1/vendors');
       setVendors(response.data);
     } catch (error) {
       console.error('Error fetching real vendors API:', error);

@@ -10,7 +10,7 @@ const GatePasses = () => {
   const fetchGatePasses = async () => {
     try {
       // In production, this hits the backend controller mapped to GatePassService
-      const response = await axios.get('http://localhost:8080/api/v1/gate-passes');
+      const response = await axios.get('https://karyasanchay.onrender.com/api/v1/gate-passes');
       if (response.data && response.data.length > 0) {
         setGatePasses(response.data);
       } else {

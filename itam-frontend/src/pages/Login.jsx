@@ -28,7 +28,7 @@ const Login = () => {
     setError('');
     
     try {
-      const res = await axios.post('http://localhost:8080/api/v1/auth/login', { email, password });
+      const res = await axios.post('https://karyasanchay.onrender.com/api/v1/auth/login', { email, password });
       login(res.data);
       navigate('/');
     } catch (err) {

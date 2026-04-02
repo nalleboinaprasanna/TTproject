@@ -9,7 +9,7 @@ const Assets = () => {
 
   const fetchAssets = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/v1/assets');
+      const response = await axios.get('https://karyasanchay.onrender.com/api/v1/assets');
       setAssets(response.data);
     } catch (error) {
       console.error('Error fetching assets:', error);

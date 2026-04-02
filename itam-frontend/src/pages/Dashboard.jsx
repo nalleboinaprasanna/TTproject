@@ -25,13 +25,13 @@ const Dashboard = () => {
   const [actionMessage, setActionMessage] = useState('');
 
   const fetchAssets = () => {
-    axios.get('http://localhost:8080/api/v1/assets')
+    axios.get('https://karyasanchay.onrender.com/api/v1/assets')
       .then(res => { setAssets(res.data); setLoading(false); })
       .catch(err => { setLoading(false); });
   };
 
   const fetchUsers = () => {
-    axios.get('http://localhost:8080/api/v1/users')
+    axios.get('https://karyasanchay.onrender.com/api/v1/users')
       .then(res => setUsers(res.data))
       .catch(err => console.error(err));
   };
@@ -45,7 +45,7 @@ const Dashboard = () => {
     e.preventDefault();
     if(!selectedAssetId || !selectedUserId) return;
     
-    axios.post(`http://localhost:8080/api/v1/assets/${selectedAssetId}/assign/initiate/${selectedUserId}`)
+    axios.post(`https://karyasanchay.onrender.com/api/v1/assets/${selectedAssetId}/assign/initiate/${selectedUserId}`)
       .then(res => {
         setActionMessage(res.data.message);
         fetchAssets(); 
@@ -61,7 +61,7 @@ const Dashboard = () => {
 
   const handleReturnAsset = (assetId) => {
     if(window.confirm("Are you sure you want to process the return for this asset?")) {
-      axios.post(`http://localhost:8080/api/v1/assets/${assetId}/return`)
+      axios.post(`https://karyasanchay.onrender.com/api/v1/assets/${assetId}/return`)
         .then(() => fetchAssets())
         .catch(() => alert("Return failed"));
     }

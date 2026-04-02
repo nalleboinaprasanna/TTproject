@@ -18,7 +18,7 @@ const Signup = () => {
     setError('');
     
     try {
-      await axios.post('http://localhost:8080/api/v1/auth/signup', { fullName, email, password });
+      await axios.post('https://karyasanchay.onrender.com/api/v1/auth/signup', { fullName, email, password });
       navigate('/login', { state: { message: "Account created successfully! Please login." } });
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create account.');
